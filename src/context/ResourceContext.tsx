@@ -22,7 +22,7 @@ const ResourceContext = createContext<ResourceContextType | undefined>(undefined
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export const ResourceProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { data, error } = useSWR<Resource[]>("/api/resources", fetcher, {
+  const { data, error } = useSWR<Resource[]>("/resources.json", fetcher, {
     revalidateOnFocus: false,
     dedupingInterval: 60000, // 1 minute
   });

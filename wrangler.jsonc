@@ -1,0 +1,11 @@
+{
+  // Static export (next build → out/) served straight from Cloudflare's asset
+  // store: no Worker code runs, so pages cost no CPU.
+  // Deploy: npm run build && npx wrangler deploy
+  "name": "genai-fundamentals-website",
+  "account_id": "4d41dfaeb65887513d0440c9e42cb0b9",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "assets": { "directory": "./out", "not_found_handling": "404-page", "html_handling": "auto-trailing-slash" },
+  "routes": [{ "pattern": "genai.devmultigroup.com", "custom_domain": true }]
+}
