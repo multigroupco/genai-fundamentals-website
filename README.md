@@ -45,6 +45,17 @@ $ npm run dev
 
 Geliştirme versiyonunu görmek için tarayıcınızda `http://localhost:3000` adresine gidin.
 
+### Yayın (statik site)
+
+Site tamamen statik: `next.config.ts` içinde `output: "export"` var. `npm run build` her şeyi `out/` klasörüne yazar ve Cloudflare bu dosyaları doğrudan sunar. Hiç sunucu kodu çalışmaz, dolayısıyla işlemci harcanmaz.
+
+```bash
+npm run build && npx wrangler deploy   # genai.devmultigroup.com (wrangler.jsonc)
+```
+
+- Kaynaklar sayfası listeyi `public/resources.json` dosyasından okur (şu an boş). Kaynak eklemek için bu dosyayı doldurup yeniden yayınlamak yeterli.
+- Eskiden Google Sheets'ten okuyan `src/app/api/resources` yolu kaldırıldı. Statik export'ta çalışmıyordu, Sheets bağlantısı da zaten kopuktu. Kodu git geçmişinde duruyor (`5c81268` commit'inden önce).
+
 ## Etkinlik Dosyalarının Yönetimi
 
 ### Event Type Yapısı
