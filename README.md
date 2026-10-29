@@ -54,6 +54,7 @@ npm run build && npx wrangler deploy   # genai.devmultigroup.com (wrangler.jsonc
 ```
 
 - Kaynaklar sayfası listeyi `public/resources.json` dosyasından okur (şu an boş). Kaynak eklemek için bu dosyayı doldurup yeniden yayınlamak yeterli.
+- VPS'te (dmg-stack) aynı statik çıktı `Dockerfile` ile bir Caddy imajına konur ve 8080 portundan sunulur.
 - Eskiden Google Sheets'ten okuyan `src/app/api/resources` yolu kaldırıldı. Statik export'ta çalışmıyordu, Sheets bağlantısı da zaten kopuktu. Kodu git geçmişinde duruyor (`5c81268` commit'inden önce).
 
 ## Etkinlik Dosyalarının Yönetimi
