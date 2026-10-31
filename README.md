@@ -47,10 +47,10 @@ Geliştirme versiyonunu görmek için tarayıcınızda `http://localhost:3000` a
 
 ### Yayın (statik site)
 
-Site tamamen statik: `next.config.ts` içinde `output: "export"` var. `npm run build` her şeyi `out/` klasörüne yazar ve Cloudflare bu dosyaları doğrudan sunar. Hiç sunucu kodu çalışmaz, dolayısıyla işlemci harcanmaz.
+Site tamamen statik: `next.config.ts` içinde `output: "export"` var. `npm run build` her şeyi `out/` klasörüne yazar ve Cloudflare Pages bu dosyaları doğrudan sunar. Hiç sunucu kodu çalışmaz.
 
 ```bash
-npm run build && npx wrangler deploy   # genai.devmultigroup.com (wrangler.jsonc)
+npm run deploy   # next build + wrangler pages deploy → Pages projesi "genai-fundamentals" (genai.devmultigroup.com)
 ```
 
 - Kaynaklar sayfası listeyi `public/resources.json` dosyasından okur (şu an boş). Kaynak eklemek için bu dosyayı doldurup yeniden yayınlamak yeterli.
